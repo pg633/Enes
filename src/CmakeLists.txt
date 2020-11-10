@@ -1,0 +1,26 @@
+aux_source_directory (. SRC_LIST)
+
+## 查找库 ../include
+include_directories (../include ${PROJECT_SOURCE_DIR}/myFunc/inc)
+FIND_LIBRARY(MYFUNC_LIB myFunc HINTS  ${PROJECT_SOURCE_DIR}/myFunc/lib)
+
+# 自定义编译选项
+option(WWW1 "print one message" ON)
+option(WWW2 "print another message" OFF)
+if (WWW1)
+    add_compile_options(-DWWW1)
+endif()
+
+if (WWW2)
+    add_compile_options(-DWWW2)
+endif()
+
+# add_compile_options(-std=c++11 -Wall) 
+add_executable (main ${SRC_LIST})
+target_link_libraries (main ${MYFUNC_LIB})
+
+
+
+# 编译输出路径
+set (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+

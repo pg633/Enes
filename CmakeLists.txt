@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 2.9)
+
+PROJECT(Enes)
+
+#  将目录中全部文件导入
+# aux_source_directory(. SRC_LIST)
+# 
+#set(SRC_LIST
+#	 ./main.c
+#	 ./testFunc.c
+#)
+#add_executable(main ${SRC_LIST})
+
+# add_subdirectory(src)
+
+
+# set (SRC_LIST ${PROJECT_SOURCE_DIR}/testFunc/myFunc.c)
+# add_library (testFunc_shared SHARED ${SRC_LIST})
+# add_library (testFunc_static STATIC ${SRC_LIST})
+
+# set_target_properties (testFunc_shared PROPERTIES OUTPUT_NAME "testFunc")
+# set_target_properties (testFunc_static PROPERTIES OUTPUT_NAME "testFunc")
+
+# set (LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+
+# 此时
+# add_subdirectory(myFunc)
+add_subdirectory(src)
